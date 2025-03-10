@@ -47,7 +47,7 @@ const SignUp = () => {
   };
 
   return (
-    <div className="satoshi w-full h-[100dvh] bg-[#536DFE] flex items-center justify-center px-5">
+    <div className="satoshi w-full min-h-screen bg-[#536DFE] flex items-center justify-center p-5 pt-2">
       <div className="bg-[#EDF3FE] rounded-2xl shadow-lg p-8 px-[100px] max-md:px-[30px] max-md:py-5 w-[657px]">
         <div className="flex justify-center">
           <img src={Logo} alt="Logo" />
