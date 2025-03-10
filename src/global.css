@@ -1,0 +1,13 @@
+@import "tailwindcss";
+
+@font-face {
+  font-family: "Satoshi";
+  src: url("./assets/fonts/Satoshi-Regular.otf");
+}
+
+.satoshi {
+  font-family: "Satoshi", sans-serif;
+}
+.poppins {
+  font-family: "Poppins", sans-serif;
+}
