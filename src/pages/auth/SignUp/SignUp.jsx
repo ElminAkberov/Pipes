@@ -117,7 +117,7 @@ const SignUp = () => {
           <Button
             children={"Create an account"}
             type="submit"
-            className="w-full button-lg  active:text-[#6681F4] text-sm py-[15px] rounded-full text-white mt-4"
+            className="w-full button-lg  active:text-[#6681F4] text-sm py-[15px] rounded-full text-white my-4"
           />
         </form>
 
