@@ -33,7 +33,7 @@ const CheckEmail = () => {
         </h2>
         <p className="text-[#666687] text-center text-[15px]">
           We've sent a password reset link to{" "}
-          <span>{sessionStorage.getItem("resetEmail")}</span>. Please check your
+          <span className="font-bold">{sessionStorage.getItem("resetEmail")}</span>. Please check your
           inbox and follow the instructions.
         </p>
 
