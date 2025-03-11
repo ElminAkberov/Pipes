@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import closeEye from "../../assets/icon/closeEye.svg";
 import openEye from "../../assets/icon/openEye.svg";
-const Input = ({ type,name, placeholder, value, onChange, error }) => {
+const Input = ({ type,name, placeholder, value, onChange, error,minLength }) => {
   const [eyeIcon, setEyeIcon] = useState(false);
   return (
     <div className="input-container relative">
@@ -10,15 +10,16 @@ const Input = ({ type,name, placeholder, value, onChange, error }) => {
         placeholder={placeholder}
         value={value}
         name={name}
+        minLength={minLength}
         onChange={onChange}
-        className={`w-full py-[16.5px] px-[18px] rounded-full placeholder:text-[#717383] bg-white text-[#252840] outline-none border focus:border focus:border-[#2D54DD] ${
+        className={`w-full py-[11px] px-[19px] rounded-full text-[15px] placeholder:text-[#717383] bg-white text-[#252840] outline-none border focus:border focus:border-[#2D54DD] ${
           error ? "border-[#FF0000]" : "border-white"
         }`}
       />
       {type === "password" && (
         <div
           onClick={() => setEyeIcon(!eyeIcon)}
-          className=" top-6 absolute right-5 cursor-pointer"
+          className=" top-[18px] absolute right-5 cursor-pointer"
         >
           <img src={!eyeIcon ? closeEye : openEye} alt="eyeicon" />
         </div>
