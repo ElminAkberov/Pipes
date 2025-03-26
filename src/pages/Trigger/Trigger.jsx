@@ -23,7 +23,7 @@ const Trigger = () => {
       } border-[#A8B0D4]  rounded-b-2xl w-full `}
     >
       <div
-        className={`bg-[#EDF3FE]  min-h-[calc(100vh-var(--header-height))] md:px-2 md:rounded-4xl ${
+        className={`bg-[#EDF3FE]  md:min-h-[calc(100vh-var(--header-height))] md:px-2 md:rounded-4xl ${
           pathname === "/trigger" || pathname === "/documentation" || pathname == "/chat"
             ? "md:relative"
             : "relative"
