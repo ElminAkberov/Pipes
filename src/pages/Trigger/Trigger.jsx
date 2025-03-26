@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { BsThreeDots } from "react-icons/bs";
 import AiStar from "../../assets/icon/AiStar.svg";
 import styles from "./Trigger.module.css";
@@ -14,6 +14,20 @@ const Trigger = () => {
   const { isMenuOpen, setIsMenuOpen } = useContext(Context);
   const location = useLocation();
   const pathname = location.pathname;
+  useEffect(() => {
+    const adjustForKeyboard = () => {
+      const inputElement = document.querySelector("input[name='action']");
+      if (inputElement) {
+        inputElement.scrollIntoView({ behavior: "smooth" });
+      }
+    };
+
+    window.addEventListener("resize", adjustForKeyboard);
+
+    return () => {
+      window.removeEventListener("resize", adjustForKeyboard);
+    };
+  }, []);
   return (
     <menu
       className={`bg-white  ${
@@ -48,7 +62,7 @@ const Trigger = () => {
                 </div>
               </div>
             </div>
-            <div className="absolute bottom-2 w-full max-w-[500px] px-4">
+            <div className="absolute bottom-2 w-full max-w-[500px] px-4 up">
               <div className="relative w-full">
                 <div
                   onClick={() => setShowActionMenu(!showActionMenu)}
