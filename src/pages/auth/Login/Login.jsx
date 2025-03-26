@@ -35,12 +35,16 @@ const Login = () => {
 
     if (!newError.email && !newError.password) {
       try {
-        await signInWithEmailAndPassword(
+        const userCredential = await signInWithEmailAndPassword(
           auth,
           formState.email,
           formState.password
         );
-        navigate("/home");
+
+        const user = userCredential.user;
+        localStorage.setItem("user", user.displayName || user.email); 
+
+        navigate("/new-chat");
       } catch (error) {
         console.error("Login Error:", error.message);
       }
@@ -54,8 +58,11 @@ const Login = () => {
 
   const handleGoogleSignIn = async () => {
     try {
-      await signInWithPopup(auth, googleProvider);
-      navigate("/home");
+      const userCredential = await signInWithPopup(auth, googleProvider);
+      const user = userCredential.user;
+      localStorage.setItem("user", user.displayName || user.email);
+
+      navigate("/new-chat");
     } catch (error) {
       console.error("Google Login Error:", error.message);
     }

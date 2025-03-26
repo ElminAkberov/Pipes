@@ -1,13 +1,121 @@
 @import "tailwindcss";
 
 @font-face {
+  font-family: "Satoshi_Bold";
+  src: url("./assets/fonts/Satoshi-Bold.otf");
+}
+@font-face {
   font-family: "Satoshi";
   src: url("./assets/fonts/Satoshi-Regular.otf");
 }
-
+:root {
+  --header-height: 85px;
+}
+body {
+  background-color: #536dfe;
+}
 .satoshi {
   font-family: "Satoshi", sans-serif;
 }
+.satoshi_bold {
+  font-family: "Satoshi_Bold", sans-serif;
+}
 .poppins {
   font-family: "Poppins", sans-serif;
+}
+textarea::-webkit-scrollbar {
+  display: none;
+}
+.checkbox-container {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.checkbox-container input[type="checkbox"] {
+  display: none;
+
+}
+
+.checkbox-container input[type="checkbox"]+label {
+  position: relative;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  margin: 2px;
+}
+
+.checkbox-container input[type="checkbox"]+label::before {
+  content: "";
+  display: block;
+  width: 15px;
+  height: 15px;
+  border: 1px solid #A8B0D4;
+  border-radius: 50%;
+  margin-right: 8px;
+}
+
+.checkbox-container input[type="checkbox"]:checked+label::before{
+  background-color: #364CEB;
+  border: 1px solid #364CEB;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
+.checkbox-container input[type=checkbox] + label:after {
+  content: "";
+  position: absolute;
+  width: 10px;
+  height: 5px;
+  bottom: 11px;
+  left: 5px;
+  border: 1px solid #A8B0D4;
+  border-width: 0 0px 1px 1px;
+  transform: rotate(-45deg);
+}
+
+.checkbox-container input[type=checkbox] + label:after {
+  content: "";
+  position: absolute;
+  width: 8px;
+  height: 5px;
+  bottom: 11px;
+  left: 4px;
+  border: 1px solid #A8B0D4;
+  border-width: 0 0px 1px 1px;
+  transform: rotate(-45deg);
+}
+
+.checkbox-container input[type=checkbox]:checked+label:after{
+  content: "";
+  position: absolute;
+  width: 8px;
+  height: 5px;
+  bottom: 11px;
+  left: 4px;
+  border: 1px solid #fff;
+  border-width: 0 0px 1px 1px;
+  transform: rotate(-45deg);
+}
+
+.scrollbar-custom::-webkit-scrollbar {
+  width: 8px;
+  margin-left: 20px;
+}
+
+.scrollbar-custom::-webkit-scrollbar-thumb {
+  background-color: #D9D9D975;
+  border-radius: 10px;
+}
+
+.scrollbar-custom::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+
+@media only screen and (max-width: 768px) {
+  body {
+    background-color: #EDF3FE;
+  }
 }

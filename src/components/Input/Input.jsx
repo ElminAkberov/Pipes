@@ -1,7 +1,17 @@
 import React, { useState } from "react";
 import closeEye from "../../assets/icon/closeEye.svg";
 import openEye from "../../assets/icon/openEye.svg";
-const Input = ({ type,name, placeholder, value, onChange, error,minLength }) => {
+const Input = ({
+  type,
+  name,
+  placeholder,
+  value,
+  onChange,
+  error,
+  minLength,
+  className,
+  checked,
+}) => {
   const [eyeIcon, setEyeIcon] = useState(false);
   return (
     <div className="input-container relative">
@@ -12,7 +22,8 @@ const Input = ({ type,name, placeholder, value, onChange, error,minLength }) => 
         name={name}
         minLength={minLength}
         onChange={onChange}
-        className={`w-full py-[11px] px-[19px] rounded-full text-[15px] placeholder:text-[#717383] bg-white text-[#252840] outline-none border focus:border focus:border-[#2D54DD] ${
+        checked={checked}
+        className={`${className} w-full py-[11px] px-[19px] rounded-full text-[15px] placeholder:text-[#717383] bg-white text-[#252840] outline-none border focus:border focus:border-[#2D54DD] ${
           error ? "border-[#FF0000]" : "border-white"
         }`}
       />

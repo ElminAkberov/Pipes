@@ -6,6 +6,7 @@ import SignUp from "../pages/auth/SignUp/SignUp";
 import Home from "../pages/Home/Home";
 import ForgotPassword from "../pages/auth/ForgotPassword/ForgotPassword";
 import CheckEmail from "../pages/auth/CheckEmail/CheckEmail";
+import ChatRoutes from "./ChatRoutes";
 
 const router = createBrowserRouter([
   {
@@ -33,6 +34,7 @@ const router = createBrowserRouter([
         path: "/home",
         element: <Home />,
       },
+      ...ChatRoutes,
     ],
   },
 ]);

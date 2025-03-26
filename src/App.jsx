@@ -1,10 +1,13 @@
 import React from "react";
 import Layout from "./layouts/Layout";
+import { ContextProvider } from "./context/ContextProvider";
 
 const App = () => {
   return (
     <div>
-      <Layout />
+      <ContextProvider>
+        <Layout />
+      </ContextProvider>
     </div>
   );
 };

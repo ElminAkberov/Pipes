@@ -61,7 +61,7 @@ const SignUp = () => {
           formState.email,
           formState.password
         );
-        navigate("/home");
+        navigate("/new-chat");
       } catch (error) {
         console.error("Signup Error:", error.message);
       }
@@ -71,7 +71,7 @@ const SignUp = () => {
     try {
       const result = await signInWithPopup(auth, googleProvider);
       console.log("Google login success:", result.user);
-      navigate("/home");
+      navigate("/new-chat");
     } catch (error) {
       console.error("Google Login Error:", error.code, error.message);
     }
