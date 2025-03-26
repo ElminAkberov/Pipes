@@ -119,8 +119,3 @@ textarea::-webkit-scrollbar {
     background-color: #EDF3FE;
   }
 }
-@media (max-width: 768px) {
-  .up:focus-within {
-    transform: translateY(-150px); /* Push input upwards */
-  }
-}
