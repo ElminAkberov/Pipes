@@ -1,4 +1,4 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { BsThreeDots } from "react-icons/bs";
 import AiStar from "../../assets/icon/AiStar.svg";
 import styles from "./Trigger.module.css";
@@ -7,24 +7,39 @@ import Manage from "../../assets/icon/nav1.svg";
 import Design from "../../assets/icon/nav2.svg";
 import Restart from "../../assets/icon/restart.svg";
 import { Context } from "../../context/ContextProvider";
-import { useLocation } from "react-router-dom";
+import { NavLink, useLocation } from "react-router-dom";
+import MobileTrigger from "./MobileTrigger";
+import { useDispatch, useSelector } from "react-redux";
+import { addPrompt } from "../../services/slices/promptSlice";
+import Modal from "../../components/Modal/Modal";
 
 const Trigger = () => {
   const [showActionMenu, setShowActionMenu] = useState(false);
-  const { isMenuOpen, setIsMenuOpen } = useContext(Context);
-  const location = useLocation();
-  const pathname = location.pathname;
+  const { isMenuOpen } = useContext(Context);
+  const queryParams = new URLSearchParams(location.search);
+  const activeNavItem = queryParams.get("activeNav");
+  useEffect(() => {
+    setShowActionMenu(false);
+  }, [isMenuOpen]);
   return (
     <menu
-      className={`bg-white  ${
-        pathname == "/documentation" || pathname == "/features"|| pathname == "/chat"
-          ? "md:border-x md:border-b md:pl-4 md:pb-4 md:pr-[65px]"
-          : "max-w-[500px]"
-      } border-[#A8B0D4]  rounded-b-2xl w-full `}
+      className={`bg-white ${
+        activeNavItem == "design" ||
+        activeNavItem == "recommend" ||
+        activeNavItem == "dashboard"
+          ? "max-w-[500px] md:border-l rounded-bl-2xl md:pl-4"
+          : `w-full md:border-x md:border-b rounded-b-2xl md:pl-4 md:pb-4 ${
+              activeNavItem == "features" || activeNavItem == "documentation"
+                ? "md:pr-[340px]"
+                : "md:pr-[65px]"
+            } `
+      } border-[#A8B0D4] w-full  `}
     >
       <div
         className={`bg-[#EDF3FE]  md:min-h-[calc(100vh-var(--header-height))] md:px-2 md:rounded-4xl ${
-          pathname === "/trigger" || pathname === "/documentation" || pathname == "/chat"
+          activeNavItem !== "design" ||
+          activeNavItem !== "recommend" ||
+          activeNavItem !== "dashboard"
             ? "md:relative"
             : "relative"
         }`}
@@ -37,15 +52,23 @@ const Trigger = () => {
                   showActionMenu ? "opacity-100" : "opacity-0 invisible"
                 } absolute bottom-14  duration-300 z-40 bg-white shadow-[0px_4px_14px_0px_#00000024] w-full max-w-[500px] max-md:max-w-[400px] p-2 rounded-[8px] `}
               >
-                <div className="flex items-center gap-x-2 hover:bg-[#EDF3FE] rounded-[4px] cursor-pointer duration-300 p-2">
+                <NavLink
+                  to={"/chat?activeNav=features"}
+                  className="flex items-center gap-x-2 hover:bg-[#EDF3FE] rounded-[4px] cursor-pointer duration-300 p-2"
+                >
                   <img src={Manage} alt="" /> Manage features
-                </div>
-                <div className="flex items-center gap-x-2 hover:bg-[#EDF3FE] rounded-[4px] cursor-pointer duration-300 p-2">
+                </NavLink>
+                <NavLink
+                  to={"/chat?activeNav=design"}
+                  className="flex items-center gap-x-2 hover:bg-[#EDF3FE] rounded-[4px] cursor-pointer duration-300 p-2"
+                >
                   <img src={Design} alt="" /> Generate UX/UI Design
-                </div>
-                <div className="flex items-center gap-x-2 hover:bg-[#EDF3FE] rounded-[4px] cursor-pointer duration-300 p-2">
-                  <img src={Restart} alt="" /> Start over
-                </div>
+                </NavLink>
+                <NavLink to={"/new-chat"}>
+                  <div className="flex items-center gap-x-2 hover:bg-[#EDF3FE] rounded-[4px] cursor-pointer duration-300 p-2">
+                    <img src={Restart} alt="" /> Start over
+                  </div>
+                </NavLink>
               </div>
             </div>
             <div className="absolute bottom-2 w-full max-w-[500px] px-4">
@@ -86,6 +109,9 @@ const Trigger = () => {
             </div>
           </div>
         </div>
+      </div>
+      <div>
+        <MobileTrigger />
       </div>
     </menu>
   );

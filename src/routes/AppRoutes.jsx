@@ -7,6 +7,7 @@ import Home from "../pages/Home/Home";
 import ForgotPassword from "../pages/auth/ForgotPassword/ForgotPassword";
 import CheckEmail from "../pages/auth/CheckEmail/CheckEmail";
 import ChatRoutes from "./ChatRoutes";
+import ChangePassword from "../pages/auth/ChangePassword/ChangePassword";
 
 const router = createBrowserRouter([
   {
@@ -20,6 +21,10 @@ const router = createBrowserRouter([
   {
     path: "/forgot-password",
     element: <ForgotPassword />,
+  },
+  {
+    path: "/change-password",
+    element: <ChangePassword />,
   },
 
   {

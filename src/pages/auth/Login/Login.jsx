@@ -42,7 +42,7 @@ const Login = () => {
         );
 
         const user = userCredential.user;
-        localStorage.setItem("user", user.displayName || user.email); 
+        localStorage.setItem("user", user.displayName || user.email);
 
         navigate("/new-chat");
       } catch (error) {
