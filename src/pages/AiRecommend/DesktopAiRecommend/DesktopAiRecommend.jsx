@@ -2,7 +2,7 @@ import React from "react";
 import Modal from "../../../components/Modal/Modal";
 import moreInfo from "../../../assets/icon/moredetails.svg";
 import magicStick from "../../../assets/icon/magicStick.svg";
-import demoSpin from "../../../assets/icon/demoSpin.svg";
+import demoSpin from "../../../assets/icon/demospin.svg";
 import Trigger from "../../Trigger/Trigger";
 
 const DesktopAiRecommend = () => {
