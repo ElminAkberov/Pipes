@@ -149,7 +149,7 @@ const Documentation = () => {
             </div>
           </div>
         </div>
-        <div className="absolute flex flex-col items-center z-50 top-1/2 left-6 -translate-x-0.5 -translate-y-0.5 text-center">
+        <div className="absolute flex flex-col items-center z-50 top-[40%] left-6 -translate-x-0.5 -translate-y-0.5 text-center">
           <img src={barrier} alt="" className="z-50" />
           <h4 className="text-[#252840CC] font-bold text-[18px]">
             Coming Soon!{" "}

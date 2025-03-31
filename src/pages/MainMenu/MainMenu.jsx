@@ -15,9 +15,9 @@ const MainMenu = () => {
     <div className="flex w-full max-md:justify-center">
       <Trigger />
       {isMenuOpen["documentation"] && <DesktopDocument />}
-      {isMenuOpen["design"] && <DesktopDesign />}
-      {isMenuOpen["recommend"] && <DesktopAiRecommend />}
-      {isMenuOpen["dashboard"] && <DesktopDashboard />}
+      {activeNavItem == "design" && <DesktopDesign />}
+      {activeNavItem == "recommend" && <DesktopAiRecommend />}
+      {activeNavItem == "dashboard" && <DesktopDashboard />}
     </div>
   );
 };
