@@ -63,7 +63,7 @@ const AddFeatures = () => {
 
   const selectedCount = Object.values(selectedFeatures).filter(Boolean).length;
   return (
-    <div className="bg-white md:absolute md:w-[360px] lg:w-[410px] md:right-[340px] top-0 md:rounded-2xl py-4 pl-4">
+    <div className="bg-white md:absolute md:w-[360px] lg:w-[410px] md:right-[360px] top-0 md:rounded-2xl py-4 pl-4">
       <div className="flex items-center justify-between mb-2">
         <h2 className="font-bold">Add new feature</h2>
         <IoMdClose

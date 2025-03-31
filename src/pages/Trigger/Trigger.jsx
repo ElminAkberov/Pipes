@@ -27,13 +27,13 @@ const Trigger = () => {
         activeNavItem == "design" ||
         activeNavItem == "recommend" ||
         activeNavItem == "dashboard"
-          ? "max-w-[500px] md:border-l rounded-bl-2xl md:pl-4"
-          : `w-full md:border-x md:border-b rounded-b-2xl md:pl-4 md:pb-4 ${
+          ? "max-w-[500px] md:border-l  rounded-bl-2xl md:pl-4"
+          : `w-full md:border-x rounded-b-2xl md:pl-4 md:pb-4 ${
               activeNavItem == "features" || activeNavItem == "documentation"
-                ? "md:pr-[340px]"
+                ? "md:pr-[360px]"
                 : "md:pr-[65px]"
             } `
-      } border-[#A8B0D4] w-full  `}
+      } border-[#A8B0D4] w-full  md:border-b `}
     >
       <div
         className={`bg-[#EDF3FE]  md:min-h-[calc(100vh-var(--header-height))] md:px-2 md:rounded-4xl ${

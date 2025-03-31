@@ -1,19 +1,22 @@
 import React from "react";
 import barrier from "../../../assets/icon/barrier.svg";
-import Template from "../../../assets/icon/generateBg.svg";
+import Template from "../../../assets/icon/Template2.svg";
 import Trigger from "../../Trigger/Trigger";
 const DesktopDashboard = () => {
   return (
     <menu className="bg-white border-r border-b border-[#A8B0D4] px-4 pb-4 rounded-br-2xl flex gap-x-4 md:pr-[65px] w-full max-md:hidden">
       <div className="bg-[#EDF3FE] w-full  min-h-[calc(100vh-var(--header-height))] px-2 rounded-4xl ">
         <div className=" min-[992px]:mx-auto">
-            <h2 className="  font-bold text-[18px] pb-2 px-10 pt-5">Your software insights</h2>
+          <h2 className="  font-bold text-[18px] pb-2 px-10 pt-5">
+            Your software insights
+          </h2>
           <div className="flex items-center justify-center min-h-[calc(100vh-140px)] relative">
             <img
               src={Template}
               alt=""
-              className="absolute z-10 max-h-[calc(100vh-150px)] mx-auto blur-sm"
+              className="absolute inset-0 object-cover rounded-2xl mx-auto blur-sm  h-full"
             />
+
             <div className="text-center max-w-[470px] p-[40px] rounded-2xl bg-white shadow-[0px_4px_14px_0px_#00000024]  z-30 max-lg:!scale-90">
               <div className="flex justify-center ">
                 <img src={barrier} alt="" />

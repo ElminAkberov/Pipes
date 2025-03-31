@@ -47,7 +47,7 @@ const Features = () => {
         Object.values(showSelectedFeatures).includes(true) ? (
           filteredFeatures.map((feature, index) => (
             <div className="text-start" key={index}>
-              <div className="flex items-center">
+              <div className="flex items-center gap-x-1">
                 <FaAngleDown color="#515366" />
                 <h4 className="font-bold my-2">{feature.title}</h4>
               </div>

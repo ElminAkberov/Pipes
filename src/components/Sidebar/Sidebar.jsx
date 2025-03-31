@@ -46,7 +46,7 @@ const Sidebar = () => {
     <aside
       className={`bg-white min-h-[calc(100vh-var(--header-height))] ${
         activeNavItem == "features" || activeNavItem == "documentation"
-          ? "w-[320px]"
+          ? "w-[340px]"
           : "w-[50px]"
       }  fixed top-[60px] right-4 mt-3 flex justify-between max-md:hidden`}
     >
