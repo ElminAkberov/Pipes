@@ -61,6 +61,7 @@ const SignUp = () => {
           formState.email,
           formState.password
         );
+        localStorage.setItem("user", formState.fullName);
         navigate("/new-chat");
       } catch (error) {
         console.error("Signup Error:", error.message);
@@ -71,6 +72,10 @@ const SignUp = () => {
     try {
       const result = await signInWithPopup(auth, googleProvider);
       console.log("Google login success:", result.user);
+      localStorage.setItem(
+        "user",
+        result.user.displayName || result.user.displayName
+      );
       navigate("/new-chat");
     } catch (error) {
       console.error("Google Login Error:", error.code, error.message);
@@ -84,14 +89,14 @@ const SignUp = () => {
           <img src={Logo} alt="Logo" className="w-[60px]" />
         </div>
 
-        <h2 className="text-[24px] font-semibold text-center mt-4">
+        <h2 className="text-[24px] satoshi_bold text-center mt-4">
           Create your account!
         </h2>
         <p className="text-[#666687] text-center text-[15px]">
           Already have an account?{" "}
           <NavLink
             to={"/"}
-            className="text-[#2D61F0] font-bold hover:text-[#2433A7] active:text-[#666687] duration-300"
+            className="text-[#2D61F0] satoshi_bold hover:text-[#2433A7] active:text-[#666687] duration-300"
           >
             Log in
           </NavLink>
@@ -142,15 +147,17 @@ const SignUp = () => {
           <p className="text-[#7A8EA4] text-sm  mt-[20px]">
             By signing up, you agree to Pipes’s{" "}
             <NavLink
-              to={""}
-              className="text-[#2D61F0] font-bold hover:text-[#2433A7] active:text-[#666687] duration-300"
+              to={"https://www.aipipes.app/terms-conditions"}
+              target="_blank"
+              className="text-[#2D61F0] satoshi_bold hover:text-[#2433A7] active:text-[#666687] duration-300"
             >
               Terms of Service
             </NavLink>{" "}
             and{" "}
             <NavLink
-              to={""}
-              className="text-[#2D61F0] font-bold hover:text-[#2433A7] active:text-[#666687] duration-300"
+              to={"https://www.aipipes.app/privacy-policy"}
+              target="_blank"
+              className="text-[#2D61F0] satoshi_bold hover:text-[#2433A7] active:text-[#666687] duration-300"
             >
               Privacy Policy
             </NavLink>
@@ -173,7 +180,7 @@ const SignUp = () => {
           className="w-full border border-white hover:border-[#364CEB] active:text-[#000000A6] active:bg-[#D9E4FD] flex items-center justify-center gap-2 bg-white py-[10px] rounded-full text-gray-700 font-medium cursor-pointer"
         >
           <img src={Google} alt="Google" className="w-5 h-5" />
-          <p className="poppins text-sm">Continue with Google</p>
+          <p className="satoshi_medium text-sm">Continue with Google</p>
         </button>
       </div>
     </div>

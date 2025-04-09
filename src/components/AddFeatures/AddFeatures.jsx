@@ -33,14 +33,14 @@ export const features = [
 ];
 const AddFeatures = () => {
   const [search, setSearch] = useState("");
-  
+
   const {
     addNewFeature,
     setAddNewFeature,
     selectedFeatures,
     setSelectedFeatures,
-      showSelectedFeatures,
-        setShowSelectedFeatures,
+    showSelectedFeatures,
+    setShowSelectedFeatures,
   } = useContext(Context);
   const handleCheckboxChange = (e, option) => {
     const isChecked = e.target.checked;
@@ -63,9 +63,9 @@ const AddFeatures = () => {
 
   const selectedCount = Object.values(selectedFeatures).filter(Boolean).length;
   return (
-    <div className="bg-white md:absolute md:w-[360px] lg:w-[410px] md:right-[360px] top-0 md:rounded-2xl py-4 pl-4">
+    <div className="bg-white shadow-[0px_4px_14px_0px_#00000026] md:absolute md:w-[360px] lg:w-[410px] md:right-[360px] top-0 md:rounded-2xl py-4 pl-4">
       <div className="flex items-center justify-between mb-2">
-        <h2 className="font-bold">Add new feature</h2>
+        <h2 className="satoshi_bold">Add new feature</h2>
         <IoMdClose
           onClick={() => setAddNewFeature(!addNewFeature)}
           className="mr-5 cursor-pointer"
@@ -94,7 +94,7 @@ const AddFeatures = () => {
             (section, idx) =>
               section.options.length > 0 && (
                 <div key={idx}>
-                  <h4 className="text-xs font-bold my-[12px]">
+                  <h4 className="text-xs satoshi_bold my-[12px]">
                     {section.title}
                   </h4>
                   {section.options.map((option, index) => (
@@ -119,12 +119,14 @@ const AddFeatures = () => {
       </div>
       <div className="flex justify-center mt-5">
         <Button
-            
-            onClick={()=>setShowSelectedFeatures(selectedFeatures)}
+          onClick={() => {
+            setShowSelectedFeatures(selectedFeatures);
+            setAddNewFeature(!addNewFeature);
+          }}
           children={
             selectedCount === 0 ? "Add" : `Add (${selectedCount} selected)`
           }
-          className="w-full max-w-[220px] button-lg font-bold active:text-[#6681F4] text-sm py-[8px] rounded-full text-white"
+          className="w-full max-w-[220px] button-lg satoshi_bold active:text-[#6681F4] text-sm py-[8px] rounded-full text-white"
         />
       </div>
     </div>

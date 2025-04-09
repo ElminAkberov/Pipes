@@ -23,7 +23,7 @@ const MobileDesign = () => {
             }}
           />
         </NavLink>
-        <h3 className="text-[18px] font-bold">UI/UX Design</h3>
+        <h3 className="text-[18px] satoshi_bold">UI/UX Design</h3>
       </div>
       <div className="bg-[#EDF3FE] flex-1 flex items-center justify-center px-4">
         {step == 0 && (
@@ -56,7 +56,7 @@ const MobileDesign = () => {
               </div>
 
               <div className="">
-                <h2 className="font-bold text-[#252840CC] text-[18px] my-2">
+                <h2 className="satoshi_bold text-[#252840CC] text-[18px] my-2">
                   Analyzing Your Project...
                 </h2>
                 <p className="text-[#252840CC]">

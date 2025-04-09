@@ -47,7 +47,7 @@ const DesktopDesign = () => {
                   </div>
 
                   <div className="">
-                    <h2 className="font-bold text-[#252840CC] text-[18px] my-2">
+                    <h2 className="satoshi_bold text-[#252840CC] text-[18px] my-2">
                       Generation in Progress....
                     </h2>
                     <p className="text-[#252840CC]">

@@ -15,7 +15,7 @@ const Features = () => {
     setSelectedFeatures,
     setShowSelectedFeatures,
   } = useContext(Context);
-
+  const [isOpen, setIsOpen] = useState({});
   const filteredFeatures = features
     .map((feature) => ({
       ...feature,
@@ -30,11 +30,10 @@ const Features = () => {
     setShowSelectedFeatures(updatedFeatures);
     setSelectedFeatures(updatedFeatures);
   };
-
   return (
     <div className="w-full max-md:px-2">
       <div className="flex items-center gap-x-2 max-md:hidden">
-        <h3 className="text-[18px] font-bold pl-1">Features </h3>
+        <h3 className="text-[18px] satoshi_bold pl-1">Features </h3>
         <img
           onClick={() => setAddNewFeature(!addNewFeature)}
           src={addFeature}
@@ -47,14 +46,31 @@ const Features = () => {
         Object.values(showSelectedFeatures).includes(true) ? (
           filteredFeatures.map((feature, index) => (
             <div className="text-start" key={index}>
-              <div className="flex items-center gap-x-1">
-                <FaAngleDown color="#515366" />
-                <h4 className="font-bold my-2">{feature.title}</h4>
+              <div
+                onClick={() =>
+                  setIsOpen((prev) => ({
+                    ...prev,
+                    [feature.title]: !prev[feature.title],
+                  }))
+                }
+                className="flex w-max items-center my-2 gap-x-1"
+              >
+                <FaAngleDown
+                  color="#515366"
+                  className={`${
+                    !isOpen[feature.title] ? "rotate-0" : "rotate-180"
+                  }`}
+                />
+                <h4 className="satoshi_bold  cursor-pointer">
+                  {feature.title}
+                </h4>
               </div>
               {feature.options.map((opt, idx) => (
                 <div
                   key={index - idx}
-                  className="flex items-center justify-between "
+                  className={`flex items-center justify-between duration-300 ${
+                    isOpen[feature.title] ? "h-0 overflow-hidden" : "mb-1 h-max"
+                  }`}
                 >
                   <div className="flex items-center gap-x-1 ">
                     <img src={setting} alt="" />

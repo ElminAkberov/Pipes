@@ -11,6 +11,7 @@ const Input = ({
   minLength,
   className,
   checked,
+  invalidCred,
 }) => {
   const [eyeIcon, setEyeIcon] = useState(false);
   return (
@@ -24,7 +25,7 @@ const Input = ({
         onChange={onChange}
         checked={checked}
         className={`${className} w-full py-[11px] px-[19px] rounded-full text-[15px] placeholder:text-[#717383] bg-white text-[#252840] outline-none border focus:border focus:border-[#2D54DD] ${
-          error ? "border-[#FF0000]" : "border-white"
+          error || invalidCred ? "border-[#FF0000]" : "border-white"
         }`}
       />
       {type === "password" && (

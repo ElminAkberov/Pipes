@@ -7,7 +7,7 @@ const DesktopDashboard = () => {
     <menu className="bg-white border-r border-b border-[#A8B0D4] px-4 pb-4 rounded-br-2xl flex gap-x-4 md:pr-[65px] w-full max-md:hidden">
       <div className="bg-[#EDF3FE] w-full  min-h-[calc(100vh-var(--header-height))] px-2 rounded-4xl ">
         <div className=" min-[992px]:mx-auto">
-          <h2 className="  font-bold text-[18px] pb-2 px-10 pt-5">
+          <h2 className="  satoshi_bold text-[18px] pb-2 px-10 pt-5">
             Your software insights
           </h2>
           <div className="flex items-center justify-center min-h-[calc(100vh-140px)] relative">
@@ -22,7 +22,7 @@ const DesktopDashboard = () => {
                 <img src={barrier} alt="" />
               </div>
               <div className="">
-                <h2 className="font-bold text-[#252840CC] text-[18px] my-2">
+                <h2 className="satoshi_bold text-[#252840CC] text-[18px] my-2">
                   Coming Soon!
                 </h2>
                 <p className="text-[#252840CC]">

@@ -82,7 +82,7 @@ const Header = () => {
             {location.pathname !== "/new-chat" && (
               <>
                 <img src={AiStar} alt="star" />
-                <h3 className="font-bold">AI Assistant</h3>
+                <h3 className="satoshi_bold">AI Assistant</h3>
                 <FaAngleDown color="#000" className="md:hidden" />
               </>
             )}
@@ -112,7 +112,7 @@ const Header = () => {
         <div
           ref={menuRef}
           onClick={() => setShowMenu(!showMenu)}
-          className="satoshi_bold flex max-md:hidden items-center text-[15px] gap-x-2 font-[900] text-[#515366] border-[2px] border-[#515366] rounded-full p-1 px-3 cursor-pointer"
+          className="satoshi_bold flex max-md:hidden items-center text-[15px] gap-x-2  text-[#515366] border-[2px] border-[#515366] rounded-full p-1 px-3 cursor-pointer"
         >
           {localStorage.getItem("user")}
           <IoIosArrowDown
@@ -135,7 +135,13 @@ const Header = () => {
           >
             <img src={Change} alt="" /> Change password
           </div>
-          <NavLink to={"/"} onClick={() => localStorage.removeItem("user")}>
+          <NavLink
+            to={"/"}
+            onClick={() => {
+              localStorage.removeItem("user");
+              navigate("/");
+            }}
+          >
             <div className="flex items-center gap-x-2 hover:bg-[#EDF3FE] rounded-[4px] cursor-pointer duration-300 p-2">
               <img src={Logout} alt="" /> Log out
             </div>

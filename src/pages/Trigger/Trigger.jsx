@@ -46,29 +46,31 @@ const Trigger = () => {
       >
         <div className="max-w-[1000px] min-[992px]:mx-auto pt-[40px] ">
           <div className="min-[992px]:max-w-[600px] min-[992px]:mx-auto flex justify-center   ">
-            <div className="bg-white w-full flex justify-center   ">
+            <div className=" w-full flex justify-center   ">
               <div
                 className={`${
                   showActionMenu ? "opacity-100" : "opacity-0 invisible"
-                } absolute bottom-14  duration-300 z-40 bg-white shadow-[0px_4px_14px_0px_#00000024] w-full max-w-[500px] max-md:max-w-[400px] p-2 rounded-[8px] `}
+                } absolute bottom-14  duration-300 z-40  w-full max-w-[500px] p-3   `}
               >
-                <NavLink
-                  to={"/chat?activeNav=features"}
-                  className="flex items-center gap-x-2 hover:bg-[#EDF3FE] rounded-[4px] cursor-pointer duration-300 p-2"
-                >
-                  <img src={Manage} alt="" /> Manage features
-                </NavLink>
-                <NavLink
-                  to={"/chat?activeNav=design"}
-                  className="flex items-center gap-x-2 hover:bg-[#EDF3FE] rounded-[4px] cursor-pointer duration-300 p-2"
-                >
-                  <img src={Design} alt="" /> Generate UX/UI Design
-                </NavLink>
-                <NavLink to={"/new-chat"}>
-                  <div className="flex items-center gap-x-2 hover:bg-[#EDF3FE] rounded-[4px] cursor-pointer duration-300 p-2">
-                    <img src={Restart} alt="" /> Start over
-                  </div>
-                </NavLink>
+                <div className="bg-white shadow-[0px_4px_14px_0px_#00000024] p-2 rounded-[8px]">
+                  <NavLink
+                    to={"/chat?activeNav=features"}
+                    className="flex items-center gap-x-2  hover:bg-[#EDF3FE] rounded-[4px] cursor-pointer duration-300 p-2"
+                  >
+                    <img src={Manage} alt="" /> Manage features
+                  </NavLink>
+                  <NavLink
+                    to={"/chat?activeNav=design"}
+                    className="flex items-center gap-x-2 hover:bg-[#EDF3FE] rounded-[4px] cursor-pointer duration-300 p-2"
+                  >
+                    <img src={Design} alt="" /> Generate UX/UI Design
+                  </NavLink>
+                  <NavLink to={"/new-chat"}>
+                    <div className="flex items-center gap-x-2 hover:bg-[#EDF3FE] rounded-[4px] cursor-pointer duration-300 p-2">
+                      <img src={Restart} alt="" /> Start over
+                    </div>
+                  </NavLink>
+                </div>
               </div>
             </div>
             <div className="absolute bottom-2 w-full max-w-[500px] px-4">
@@ -89,7 +91,7 @@ const Trigger = () => {
           </div>
           <div className="flex justify-end mb-2 px-4">
             <div className="bg-white  max-w-[500px] p-4 rounded-t-2xl rounded-bl-2xl  ">
-              <h3 className="font-bold">Victoria</h3>
+              <h3 className="satoshi_bold">Victoria</h3>
               <p className="text-[#252840CC]">
                 I want to create an app that helps users find nearby fitness
                 classes and book them directly. It should allow for class
@@ -101,7 +103,7 @@ const Trigger = () => {
             <div className="bg-[#D9E4FD] w-full max-w-[300px]  p-4 rounded-t-2xl rounded-bl-2xl">
               <div className="flex items-center gap-x-1">
                 <img src={AiStar} alt="star" />
-                <h3 className="font-bold">AI Assistant</h3>
+                <h3 className="satoshi_bold">AI Assistant</h3>
               </div>
               <p className="text-[#252840CC]">
                 <SyncLoader size={5} speedMultiplier={0.5} />

@@ -29,7 +29,7 @@ const MobileFeature = () => {
             />
           </NavLink>
         </div>
-        <h3 className="text-[18px] font-bold">Features</h3>
+        <h3 className="text-[18px] satoshi_bold">Features</h3>
         <img
           onClick={() => setAddNewFeature(!addNewFeature)}
           src={addFeature}

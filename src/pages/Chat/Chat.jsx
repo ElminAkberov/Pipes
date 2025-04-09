@@ -10,7 +10,7 @@ const Chat = () => {
     <menu className="bg-white md:border-x md:border-b border-[#A8B0D4] md:px-4 md:pb-4 md:rounded-b-2xl ">
       <div className="bg-[#EDF3FE] min-h-[calc(100vh-var(--header-height))] flex max-md:mt-6  flex-col items-center md:justify-center text-center md:rounded-4xl ">
         <div className="max-w-[600px] max-md:mx-[25px] ">
-          <h2 className="text-[24px] font-bold">
+          <h2 className="text-[24px] satoshi_bold">
             Tell about your software product to AI assistant
           </h2>
           <p className="text-[#666687] mb-[28px]">

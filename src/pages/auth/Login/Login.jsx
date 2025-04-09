@@ -16,6 +16,7 @@ const Login = () => {
     email: "",
     password: "",
     error: { email: "", password: "" },
+    invalidCred: false,
   });
 
   const navigate = useNavigate();
@@ -46,11 +47,15 @@ const Login = () => {
 
         navigate("/new-chat");
       } catch (error) {
+        setFormState((prevState) => ({
+          ...prevState,
+          invalidCred: error.message,
+        }));
         console.error("Login Error:", error.message);
       }
     }
   };
-
+  console.log(formState);
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormState((prevState) => ({ ...prevState, [name]: value }));
@@ -75,14 +80,19 @@ const Login = () => {
           <img src={Logo} alt="Logo" className="w-[60px]" />
         </div>
 
-        <h2 className="text-[24px] font-semibold text-center mt-4">
-          Welcome on board!👋
+        <h2 className="text-[24px] satoshi_bold text-center mt-4">
+          Welcome on board! 👋
         </h2>
         <p className="text-[#666687] text-center text-[15px]">
           Please, login with your email and password.
         </p>
+        {formState.invalidCred && (
+          <p className="text-[#FF0000] text-center text-[15px] mt-5">
+            Incorrect email or password. Try again!
+          </p>
+        )}
 
-        <form onSubmit={handleSubmit} className="mt-6">
+        <form onSubmit={handleSubmit} className="mt-5">
           <div className="mb-4">
             <Input
               type="email"
@@ -91,6 +101,7 @@ const Login = () => {
               value={formState.email}
               onChange={handleChange}
               error={formState.error.email}
+              invalidCred={formState.invalidCred}
             />
           </div>
           <div className="mb-[12px]">
@@ -101,6 +112,7 @@ const Login = () => {
               value={formState.password}
               onChange={handleChange}
               error={formState.error.password}
+              invalidCred={formState.invalidCred}
             />
           </div>
           <div className="text-right  text-[15px] text-[#364CEB] mb-4 hover:text-[#2433A7] active:text-[#666687] duration-300">
@@ -109,7 +121,7 @@ const Login = () => {
           <Button
             children={"Log in"}
             type="submit"
-            className="w-full button-lg active:text-[#6681F4] text-sm py-[13px] rounded-full text-white"
+            className="w-full  button-lg active:text-[#6681F4] text-sm py-[13px] rounded-full text-white"
           />
         </form>
 
@@ -128,7 +140,7 @@ const Login = () => {
           className="w-full border border-white hover:border-[#364CEB] active:text-[#000000A6] active:bg-[#D9E4FD] flex items-center justify-center gap-2 bg-white py-[10px] rounded-full text-gray-700 font-medium cursor-pointer"
         >
           <img src={Google} alt="Google" className="w-5 h-5" />
-          <p className="poppins text-sm">Continue with Google</p>
+          <p className="satoshi_medium text-sm">Continue with Google</p>
         </button>
       </div>
     </div>

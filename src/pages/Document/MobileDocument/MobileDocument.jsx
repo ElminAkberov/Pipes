@@ -19,6 +19,10 @@ const MobileDocument = () => {
       setTimeout(() => {
         setStep(3);
       }, 2000);
+    } else if (step == 3) {
+      setTimeout(() => {
+        setStep(null);
+      }, 3000);
     }
   }, [step]);
   return (
@@ -34,89 +38,107 @@ const MobileDocument = () => {
             }}
           />
         </NavLink>
-        <h3 className="text-[18px] font-bold">Documentation</h3>
+        <h3 className="text-[18px] satoshi_bold">Documentation</h3>
       </div>
       <div className="flex justify-center w-full">
         <div className="flex justify-center  flex-col ">
           <div className="flex items-center gap-x-2 cursor-pointer p-2">
             <FaAngleDown color="#515366" />
-            <h4 className="font-bold">Planning & Requirements</h4>
+            <h4 className="satoshi_bold">Planning & Requirements</h4>
           </div>
 
-          <div className="flex items-center justify-start gap-x-2 ml-3 my-2 cursor-pointer text-[18px]">
+          <div className="flex items-center justify-start gap-x-2  my-2 cursor-pointer text-[18px]">
             <div className="relative ">
               <div
                 onClick={() => setStep(1)}
-                className="flex items-center gap-x-2 mb-2"
+                className="flex items-center gap-x-2 mb-2 ml-3"
               >
                 <img src={download} alt="" />
                 <p>Business Requirements Document (BRD)</p>
               </div>
-              <div className=" blur-[10px] select-none pointer-events-none relative w-full">
-                <div className="">
-                  <div className="flex items-center gap-x-2 cursor-pointer">
-                    <FaAngleDown color="#515366" />
-                    <h4 className="text-sm font-bold">
-                      Planning & Requirements
-                    </h4>
-                  </div>
-                  <div className="flex items-center gap-x-2 ml-3 mt-2 cursor-pointer">
+              <div className=" blur-[1px] opacity-25 bg-white select-none pointer-events-none relative w-full">
+                <div className="ml-3">
+                  <div className="flex items-center gap-x-2 mb-2">
                     <img src={download} alt="" />
-                    <p>Business Requirements Document (BRD)</p>
+                    <p>Software Requirements Specification (SRS)</p>
                   </div>
-                </div>{" "}
-                <div className="">
-                  <div className="flex items-center gap-x-2 cursor-pointer">
-                    <FaAngleDown color="#515366" />
-                    <h4 className="text-sm font-bold">
-                      Planning & Requirements
-                    </h4>
-                  </div>
-                  <div className="flex items-center gap-x-2 ml-3 mt-2 cursor-pointer">
+                  <div className="flex items-center gap-x-2 mb-2">
                     <img src={download} alt="" />
-                    <p>Business Requirements Document (BRD)</p>
+                    <p>User Stories & Use Cases</p>
                   </div>
-                </div>{" "}
-                <div className="">
-                  <div className="flex items-center gap-x-2 cursor-pointer">
-                    <FaAngleDown color="#515366" />
-                    <h4 className="text-sm font-bold">
-                      Planning & Requirements
-                    </h4>
-                  </div>
-                  <div className="flex items-center gap-x-2 ml-3 mt-2 cursor-pointer">
+                  <div className="flex items-center gap-x-2 mb-2">
                     <img src={download} alt="" />
-                    <p>Business Requirements Document (BRD)</p>
+                    <p>Product Roadmap</p>
                   </div>
                 </div>
-                <div className="">
-                  <div className="flex items-center gap-x-2 cursor-pointer">
-                    <FaAngleDown color="#515366" />
-                    <h4 className="text-sm font-bold">
-                      Planning & Requirements
-                    </h4>
-                  </div>
-                  <div className="flex items-center gap-x-2 ml-3 mt-2 cursor-pointer">
+                <div className="flex items-center gap-x-2 cursor-pointer p-2 text-sm">
+                  <FaAngleDown color="#515366" />
+                  <h4 className="satoshi_bold">Architecture</h4>
+                </div>
+                <div className="ml-3">
+                  <div className="flex items-center gap-x-2 mb-2">
                     <img src={download} alt="" />
-                    <p>Business Requirements Document (BRD)</p>
+                    <p>System Architecture Document</p>
+                  </div>
+                  <div className="flex items-center gap-x-2 mb-2">
+                    <img src={download} alt="" />
+                    <p>Database Design Document</p>
+                  </div>
+                  <div className="flex items-center gap-x-2 mb-2">
+                    <img src={download} alt="" />
+                    <p>API Documentation</p>
                   </div>
                 </div>
-                <div className="">
-                  <div className="flex items-center gap-x-2 cursor-pointer">
-                    <FaAngleDown color="#515366" />
-                    <h4 className="text-sm font-bold">
-                      Planning & Requirements
-                    </h4>
-                  </div>
-                  <div className="flex items-center gap-x-2 ml-3 mt-2 cursor-pointer">
+                <div className="flex items-center gap-x-2 cursor-pointer p-2 text-sm">
+                  <FaAngleDown color="#515366" />
+                  <h4 className="satoshi_bold">Development & Implementation</h4>
+                </div>
+                <div className="ml-3">
+                  <div className="flex items-center gap-x-2 mb-2">
                     <img src={download} alt="" />
-                    <p>Business Requirements Document (BRD)</p>
+                    <p>Technical Specifications Document</p>
+                  </div>
+                  <div className="flex items-center gap-x-2 mb-2">
+                    <img src={download} alt="" />
+                    <p>Code Documentation</p>
+                  </div>
+                  <div className="flex items-center gap-x-2 mb-2">
+                    <img src={download} alt="" />
+                    <p>Version Control Policy</p>
+                  </div>
+                </div>
+                <div className="flex items-center gap-x-2 cursor-pointer p-2 text-sm">
+                  <FaAngleDown color="#515366" />
+                  <h4 className="satoshi_bold">Testing & Quality Assurance</h4>
+                </div>
+                <div className="ml-3">
+                  <div className="flex items-center gap-x-2 mb-2">
+                    <img src={download} alt="" />
+                    <p>Test Plan & Test Cases</p>
+                  </div>
+                  <div className="flex items-center gap-x-2 mb-2">
+                    <img src={download} alt="" />
+                    <p>Bug Tracking & Issue Logs</p>
+                  </div>
+                </div>
+                <div className="flex items-center gap-x-2 cursor-pointer p-2 text-sm">
+                  <FaAngleDown color="#515366" />
+                  <h4 className="satoshi_bold">Deployment & Maintenance</h4>
+                </div>
+                <div className="ml-3">
+                  <div className="flex items-center gap-x-2 mb-2">
+                    <img src={download} alt="" />
+                    <p>Deployment Guide</p>
+                  </div>
+                  <div className="flex items-center gap-x-2 mb-2">
+                    <img src={download} alt="" />
+                    <p>User Manual</p>
                   </div>
                 </div>
               </div>
               <div className="absolute flex flex-col items-center z-50 top-1/2 left-1/2 -translate-x-1/2 w-[90%] -translate-y-1/2 text-center">
                 <img src={barrier} alt="" className="z-50" />
-                <h4 className="text-[#252840CC] font-bold text-[18px]">
+                <h4 className="text-[#252840CC] satoshi_bold text-[18px]">
                   Coming Soon!{" "}
                 </h4>
                 <p className="text-[#252840CC]">
@@ -149,7 +171,7 @@ const MobileDocument = () => {
             </div>
 
             <div className="">
-              <h2 className="font-bold text-[#252840CC] text-[18px] my-2">
+              <h2 className="satoshi_bold text-[#252840CC] text-[18px] my-2">
                 Generation in Progress....
               </h2>
               <p className="text-[#252840CC]">
@@ -175,7 +197,7 @@ const MobileDocument = () => {
                 />
               </div>
               <div className="">
-                <p className="text-[14px] text-[#484951] font-bold">
+                <p className="text-[14px] text-[#484951] satoshi_bold">
                   Document successfully downloaded!
                 </p>
               </div>

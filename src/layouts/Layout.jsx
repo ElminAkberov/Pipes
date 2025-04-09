@@ -1,6 +1,6 @@
 import React, { useContext, useEffect } from "react";
 import { Outlet, useLocation, useNavigate } from "react-router-dom";
-import "../assets/fonts/Satoshi-Regular.otf";
+import "../assets/fonts/Satoshi-Medium.woff2";
 import { auth } from "../services/firebase/firebaseConfig";
 import Header from "../components/Header/Header";
 import Sidebar from "../components/Sidebar/Sidebar";
